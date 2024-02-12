@@ -1,0 +1,90 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: monospace;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0a3c2f;
+}
+.container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #0d614b;
+  padding: 40px 60px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button{
+  padding: 15px 0;
+  font-size: 1.3rem;
+  background-color: aliceblue;
+  color: #0a3c2f;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 130px;
+  margin: auto;
+}
+button:focus{
+  background-color: #0a3c2f;
+  color: aliceblue;
+  font-weight: bold;
+}
+h2{
+  font-size: 3rem;
+  color: aliceblue;
+}
+.results{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.item{
+  font-size: 3rem;
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  margin: 5px;
+  cursor: pointer;
+}
+.item::after{
+  content: '?';
+  background-color: #088f6b;
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  transition: 0.25s;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+.boxopen{
+  transform: rotateY(0);
+  cursor: pointer;
+}
+.boxopen::after{
+  transform: rotateY(180deg);
+  content: '';
+  cursor: pointer;
+}
+.boxopen::after,
+.boxmatch::after{
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+.win{
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
